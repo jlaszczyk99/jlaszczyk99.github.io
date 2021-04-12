@@ -1,3 +1,19 @@
+.results > div > .upper
+{
+    display: none !important;
+}
+.results > div > .mid
+{
+    display: none !important;
+}
+.results > div > .footer
+{
+    display: none !important;
+}
+.results > section
+{
+    display: block !important;
+}
 body {
     min-height: 100%;
     position: relative;
