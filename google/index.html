@@ -23,7 +23,7 @@
                 <div class="write">
                     <div class="searchline">
                         <img class="loupe" src="loupe.png">
-                        <input type="search" v-model="inputHandler">
+                       <input list="resultsCities" type="text" maxlength="2048" name="fname" style="margin-left: 10px;" v-model="inputHandler">
                         <img class="icons" src="keyboard.png">
                         <img class="icons" src="micro.png">
                     </div>
@@ -56,17 +56,22 @@
                     <footerbox>Warunki</footerbox>
                     <footerbox>Ustawienia</footerbox></div>
                 </div>
+
             </div>
+          <ul>
+                <li v-for="item in findCity" :key="item.name">
+                  {{ item.name }}
+                </li>
+              </ul>    
         </div>
        <section >
         <div id="header">
             <div id="up">
                 <img id="image1" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" />
                 <div id="bar" type="text" >
-                    <input id="searchbartext" type="text" value="agh" />
               
                     
-    
+    <input  type="text" maxlength="2048" name="fname" v-model="inputHandler">
                     <button id="szukaj">
                         <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
@@ -91,7 +96,7 @@
                     <li>Opcje</li>
                     <li>Narzędzia</li>
                 </ul>
-    
+     <input list="resultsCities" type="text" maxlength="2048" name="fname" style="margin-left: 10px;" v-model="inputHandler">
                
                   
                 
@@ -183,7 +188,31 @@
         </div>
        </section>
     </body>
-<script src="app.js"></script>
+<script src="cities.js"></script>
+
+<script >
+var app = new Vue({ 
+    el: '#app',
+    data: {
+        inputHandler: '',
+        cities: window.cities,
+        filteredCities: []
+    },
+    computed: {
+        findCity(){
+            if(this.inputHandler != ''){
+            var a = window.cities.filter(obj => obj.name.includes(this.inputHandler))
+            a=a.slice(0,10)
+            this.filteredCities = a;
+            return this.filteredCities
+        }
+        }
+    },
+    updated: function() {
+        if(app.inputHandler !== '')
+            document.body.classList.add("results")
+      }
+});
+
+</script>
 </html>
-
-
