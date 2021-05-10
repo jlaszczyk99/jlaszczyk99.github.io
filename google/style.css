@@ -41,33 +41,33 @@ div.main {
 	margin-top: 14px;
 }
 
-	.main nav.bar a {
-		font-size: 13px;
-		display: inline-block;
-		line-height: 24px;
-		font-weight: 400;
-		color: rgb(0,0,0, 0.87);
-		cursor: pointer;
-		padding: 5px 6.7px
-	}
+.main nav.bar a {
+    font-size: 13px;
+    display: inline-block;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(0,0,0, 0.87);
+	  cursor: pointer;
+	  padding: 5px 6.7px
+}
 
-		.main nav.bar a:hover {
-			text-decoration: underline;
-			opacity: .85;
-		}
+.main nav.bar a:hover {
+	text-decoration: underline;
+	opacity: .85;
+}
+  
+.main nav.bar img {
+	width: 40px;
+    padding: 7px 7px;
+	margin: auto 7px;
+	cursor: pointer;
+}
 
-	.main nav.bar img {
-		width: 40px;
+	.main nav.bar img:hover {
+		background-color: #ececece5;
 		padding: 7px 7px;
-		margin: auto 7px;
-		cursor: pointer;
+		border-radius: 30px;
 	}
-
-		.main nav.bar img:hover {
-			background-color: #ececece5;
-			padding: 7px 7px;
-			border-radius: 30px;
-		}
 
 	.main nav.bar button {
 		border: 1px solid #3478e7;
@@ -230,20 +230,22 @@ div.main {
 		border: 1px solid #fff;
 		box-shadow: 0 0 5px rgba(172, 172, 172, 0.822);
 	}
+.main .thin {
+	font-weight: 500;
+}
 
+.main .dropdown_content .list li {
+	list-style: none;
+	background-image: url('images_google/search_icon.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 20px;
+	margin: 0 15px 0 15px;
+	text-align: left;
+	padding: 7px 5px 7px 30px;
+}
 
-	.main .dropdown_content .list li {
-		list-style: none;
-		background-image: url('images_google/search_icon.png');
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: 20px;
-		margin: 0 15px 0 15px;
-		text-align: left;
-		padding: 7px 5px 7px 30px;
+	.main .dropdown_content .list li.grey_content {
+		background-color: rgb(240, 240, 240);
 	}
-
-		.main .dropdown_content .list li:hover {
-			background-color: rgb(240, 240, 240);
-		}
 
