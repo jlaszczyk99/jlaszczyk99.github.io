@@ -1,218 +1,268 @@
 ﻿<!DOCTYPE html>
 <html lang="pl">
-    <head>
-        <meta charset="utf-8">
-        <title>Google</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="styles2.css">
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    </head>
-    <body >
-        <div id="app">
-            <div class="upper">
-                <up1>Gmail</up1>
-                <up1 >Grafika</up1>
-                <dots><img src="dots.png"></dots>
-                <log>Zaloguj się</log>
-        </div>
-        <div class="mid">
-            <div class="logo">
-                <img src="logo.png" alt="Google" height="92" width="272">
-            </div>
-            <div class="search">
-                <div class="write">
-                    <div class="searchline">
-                        <img class="loupe" src="loupe.png">
-                       <input list="resultsCities" type="text" maxlength="2048" name="fname" style="margin-left: 10px;" v-model="inputHandler">
-                        <img class="icons" src="keyboard.png">
-                        <img class="icons" src="micro.png">
-                    </div>
-                </div>
-            <div class="buttons">
-                <div class="searchbutton">
-                    <button class="button1" type="button">Szukaj w Google</button>
-                    <button class="button1" type="button">Szczęśliwy traf</button>
-                </div>
-            </div>
-        </div>
-        </div>
-            <div class="footer">
-                <div class="footerl1">Polska</div>
-                <div class="footerl2">
-                    <div class="footerl2_1">
-                    <footerbox>O nas</footerbox>
-                    <footerbox>Reklamuj się</footerbox>
-                    <footerbox>Dla firm</footerbox>
-                    <footerbox>Jak działa wyszukiwarka</footerbox>
-                    </div>                    
-                <div class="carbonneutral">
-                    <div class="neutral">                     
-                        <img class = "leaf" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC">
-                        <a class="neutraltekst" color=blue;>Neutralność węglowa od 2007 roku</a>
-                    </div>
-                </div>   
-                    <div class="footerl2_2">
-                    <footerbox>Prywatność</footerbox>
-                    <footerbox>Warunki</footerbox>
-                    <footerbox>Ustawienia</footerbox></div>
-                </div>
 
-            </div>
-          <ul>
-                <li v-for="item in findCity" :key="item.name">
-                  {{ item.name }}
-                </li>
-              </ul>    
-        </div>
-       <section >
-        <div id="header">
-            <div id="up">
-                <img id="image1" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" />
-                <div id="bar" type="text" >
-              
-                    
-    <input  type="text" maxlength="2048" name="fname" v-model="inputHandler">
-                    <button id="szukaj">
-                        <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path
-                                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-                            </path>
-                        </svg>
-                    </button>
-                </div>
-    
-                
-                <div id="dots"><img src="dots.png" height=24px width=24px></div>
-                <img id="profileimage" src="zaloguj.png" >
-            </div>
-            <div id="option">
-                <ul id="menu1">
-                    <li id="option1">Wszystko</li>
-                    <li>Wiadomości</li>
-                    <li>Wideo</li>
-                    <li>Zdjęcia</li>
-                    <li>Mapy</li>
-                    <li>Więcej</li>
-                    <li>Opcje</li>
-                    <li>Narzędzia</li>
-                </ul>
-     <input list="resultsCities" type="text" maxlength="2048" name="fname" style="margin-left: 10px;" v-model="inputHandler">
-               
-                  
-                
-            </div>
-        </div>
-        <div id="allresults">
-            <p id="czas">Około  2000 wyników (0,64 s)  </p>
-    
-            <div class="result">
-                <h2>Strona główna AGH</h2>
-                <a>
-                    www.agh.edu.pl
-                </a>
-                <p>
-                    Strona główna AGH. Pracownicze Plany Kapitałowe – wdrożenie systemu w AGH. Nowe dowody na rzadki rozpad bozonu Higgsa w eksperymencie ATLAS. Wirtualny Dzień Otwarty AGH – 16 kwietnia. Naukowcy z AGH redaktorami specjalnego wydania czasopisma naukowego „Energies”. Projekt analityczny studentów AGH usprawni pracę lekarzy.
-                </p>
-            </div>
-    
-            <div class="result">
-                <h2>Kandydaci AGH – Serwis dla kandydatów</h2>
-                <a>https://kandydaci.agh.edu.pl</a>
-                <p>AGH inspiruje do działania Wysokiej klasy badania naukowe ukierunkowane na wdrożenia przemysłowe oraz kształcenie znakomitych kadr inżynierskich od lat są marką naszej uczelni. Wiedza przekazywana w AGH ma przede wszystkim wymiar praktyczny, a pasja, z jaką naukowcy tworzą innowacyjne rozwiązania oraz entuzjazm młodych ludzi zaangażowanych w wiele ambitnych projektów, budzą wielki podziw.</p>
-    
-            </div>
-    
-            <div class="result">
-                <h2>Mapa strony / Akademia Górniczo-Hutnicza w Krakowie.</h2>
-                <a>http://www.agh.pl/</a> <button>▼</button>
-                <p> Księga Identyfikacji Wizualnej · Znak graficzny AGH · Konstrukcja znaku · Zasady projektowania · Kolorystyka · Wersje barwne znaku · Znak z nazwą uczelni - ...</p>
-            </div>
-            <div class="result">
-                <h2>Studia pierwszego stopnia / Akademia Górniczo ... - AGH</h2>
-                <a>http://www.agh.pl/</a> <button>▼</button>
-                <p> Księga Identyfikacji Wizualnej · Znak graficzny AGH · Konstrukcja znaku · Zasady projektowania · Kolorystyka · Wersje barwne znaku · Znak z nazwą uczelni - ...</p>
-            </div>
-            <div class="result">
-                <h2>Zasady i terminy rekrutacja na studia I i II stopnia | WGiG</h2>
-                <a>https://wgig.agh.edu.pl/</a> <button>▼</button>
-                                                <p> Zasady rekrutacji na studia doktoranckie i inne informacje można znaleźć na stronie Szkoły Doktorskiej AGH – czytaj tutaj. Przewodnik “Krok po kroku” ...</p>
-            </div>
-    
-            <div class="pagebar">
-                <ul class="numbers">
-    
-                    <table>
-                        <tr>
-                            <td><span class="blue">G</span></td>
-                            <td><span class="red">o</span></td>
-                            <td><span class="yellow">o</span></td>
-                            <td><span class="yellow">o</span></td>
-                            <td><span class="yellow">o</span></td>
-                            <td><span class="yellow">o</span></td>
-                            <td><span class="yellow">o</span></td>
-                            <td><span class="blue">g</span></td>
-                            <td><span class="green">l</span></td>
-                            <td><span class="red">e</span></td>
-                            <td rowspan="2" style="width: 10px;"></td>
-                            <td><span class="blue"><i class="fas fa-angle-right"></i></span></td>
-                        </tr>
-                        <tr>
-                            <td class="pageNumber"></td>
-                            <td class="pageNumber"></td>
-                            <td class="pageNumber">1</td>
-                            <td class="pageNumber">2</td>
-                            <td class="pageNumber">3</td>
-                            <td class="pageNumber">4</td>
-                            <td class="pageNumber">5</td>
-                            <td colspan="3"></td>
-                            <td class="pageNumber">Nastepna</td>
-                        </tr>
-                    </table>
-                </ul>
-            </div>
-        </div>
-    
-        <div id="footer">
-            <div id="footerlocation">
-       
-       <p>  Podgórze Duchackie, Kraków </p>
-              <p> - Z twojego adresu internetowego - Użyj dokładnej lokalizacji - Dowiedz się więcej</p>
-            </div>
-    
-            <ul id="last">
-                <li>Pomoc</li>
-                <li>Prześlij opinię</li>
-                <li>Prywatność</li>
-                <li>Warunki</li>
-            </ul>
-        </div>
-       </section>
-    </body>
-<script src="cities.js"></script>
+<head>
+    <meta charset="utf-8">
+    <title>Google</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./cities.js"></script>
+    <link rel="stylesheet" type="text/css" href="style2.css">
 
-<script >
-var app = new Vue({ 
+</head>
+
+  <body> 
+    <div id="app" :class="[classes == 1 ? 'results' : 'main']"> 
+      
+    <nav class="bar">
+        <a href ="#">Gmail</a>
+        <a href ="#">Grafika</a>
+        <img src="square.png" class="google_apps" role="button"></img>
+        <button>Zaloguj się</button>
+    </nav>
+
+    <section class="search">
+        <img src="logo.png" class="logo">
+        <form><br><br>
+            <div class="search_elements">
+              <div class="dropdown_content">
+                <input ref="first" v-model="googleSearch" type="text" class="search_input"/>
+                <div class="bottom_border"></div>
+                <div class="list">
+                  <ul v-for="city in filtered" v-on:click="updated(city.name)">
+                    <li>
+                      <b>{{ city.name.substring(0, city.name.indexOf(googleSearch[0])) }}</b>{{googleSearch}}<b>{{ city.name.substring(googleSearch.length + (city.name.substring(0, city.name.indexOf(googleSearch[0]))).length) }}</b>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+                <img src="search_icon.png" class="search_icon"/>
+                <img src="microphone.png" class="micro"/>
+                <input v-on:click="pages()" type="button" class="search_button" value="Sukaj w google"/>
+                <input v-on:click="pages()" type="button" class="search_button" value="Szczęśliwy traf"/>
+            </div>
+        </form>
+    </section>
+
+    <footer class="footer_main">
+        <h4>Polska</h4>
+        <div class="links">
+            <div class="link_1">
+                <a href="#">O nas</a>
+                <a href="#">Reklamuj się</a>
+                <a href="#">Dla firm</a>
+                <a href="#">Jak działa wyszukiwarka</a>
+            </div>
+            <div class="link_2">
+                <a href="#"><img src="leaf.png" class="leaf">Nautralność węglowa od 2007 roku</a>
+            </div>
+            <div class="link_3">
+                <a href="#">Prywatność</a>
+                <a href="#">Warunki</a>
+                <a href="#">Ustawienia</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="top_nav">
+
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt=""  v-on:click="pages()">
+
+        <ul class="option">
+          <li><a href="#"><img src="square.png" class="google_apps" role="button"></a></li>
+          <li><button class="signIn" type="button" name="button">Zaloguj się</button></li>
+        </ul>
+
+        <div class="settings_search">
+
+          <div class="search_elem">
+            <input ref="second" type="text" v-model="googleSearch"/>
+            <img src="loupe2.png" class="search_icon">
+            <img src="microphone.png" class="micro">
+            <img src="keyboard.png" class="search_keyboard">
+            <div class="line"></div>
+            <img src="iks.png" class="search_x">
+          </div>
+
+          <ul class="search_options">
+            <li class="left active"><a href="#">Wszystko</a></li>
+            <li class="left"><a href="#">Wiadomości</a></li>
+            <li class="left"><a href="#">Grafika</a></li>
+            <li class="left"><a href="#">Wideo</a></li>
+            <li class="left"><a href="#">Mapy</a></li>
+            <li class="left"><a href="#">Więcej</a></li>
+            <li class="right"><a class="tools" href="#">Narzędzia</a></li>
+            <li class="right"><a href="#">Ustawienia</a></li>
+          </ul>
+          
+        </div>
+
+    </div> 
+
+    <div class="searchResults">
+
+        <p class="results_number">Około 19 400 000 wyników (0,66 s)</p>
+
+
+        <div class="result">
+            <a class="link" href="#">
+                https://www.agh.edu.pl
+            </a><button>▼</button>
+            <h2><a href="#">Strona główna AGH</a></h2>
+            <p>Zapoznaj się z polityką obsługi plików cookies (ciasteczek) w serwisie AGH. Jeśli Państwa przeglądarka nie blokuje takich plików, przesyłanych przez nasz ...</p>
+        </div>
+
+        <div class="result">
+            <a class="link" href="#">
+                https://www.facebook.com › Places › Kraków, Poland
+            </a><button>▼</button>
+            <h2><a href="#">Akademia Górniczo-Hutnicza w Krakowie - Home | Facebook</a></h2>
+            <p>Akademia Górniczo-Hutnicza w Krakowie, Cracow, Poland. 65905 likes · 1432 talking about this · 26097 were here. AGH - Akademia Górniczo-Hutnicza im....</p>
+        </div>
+
+        <div class="result">
+            <a class="link" href="#">
+                https://pl.wikipedia.org › wiki › Akademia_Górniczo-H...
+            </a><button>▼</button>
+            <h2><a href="#">Akademia Górniczo-Hutnicza im. Stanisława Staszica w ...</a></h2>
+            <p>Stanisława Staszica w Krakowie, AGH (dawniej Akademia Górnicza w Krakowie), nazwa międzynarodowa AGH University of Science and Technology (wcześniej ...</p>
+        </div>
+
+        <div class="result">
+            <a class="link" href="#">
+                https://twitter.com › agh_krakow
+            </a><button>▼</button>
+            <h2><a href="#">AGH Kraków (@AGH_Krakow) | Twitter</a></h2>
+            <p>The latest Tweets from AGH Kraków (@AGH_Krakow). Akademia Górniczo-Hutnicza W Krakowie / AGH University of Science and Technology. Najlepsza ...</p>
+        </div>
+
+        <div class="result">
+            <a class="link" href="#">
+                https://www.instagram.com › agh.krakow
+            </a><button>▼</button>
+            <h2><a href="#">Akademia Górniczo-Hutnicza (@agh.krakow) • Instagram ...</a></h2>
+            <p>16k Followers, 279 Following, 1331 Posts - See Instagram photos and videos from Akademia Górniczo-Hutnicza (@agh.krakow)</p>
+        </div>
+
+        <div class="result">
+            <a class="link" href="#">
+                https://www.otouczelnie.pl › uczelnia › Akademia-Gorn...
+            </a><button>▼</button>
+            <h2><a href="#">AKADEMIA GÓRNICZO HUTNICZA w Krakowie | 68 ...</a></h2>
+            <p>... I i II stopnia, doktoranckie, podyplomowe, wydziały, kierunki studiów, zasady rekrutacji, informacje praktyczne o uczelni, filmiki. Interesują Cię studia na AGH?</p>
+        </div>
+
+        <div class="result">
+            <a class="link" href="#">
+                https://www.wydawnictwoagh.pl
+            </a><button>▼</button>
+            <h2><a href="#">Wydawnictwo AGH</a></h2>
+            <p>Serwis Wydawnictwa AGH.</p>
+        </div>
+
+        <br><br>
+
+        <table class="pages_numbers">
+            <tr>
+                <td><span class="blue">G</span></td>
+                <td><span class="red">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="yellow">o</span></td>
+                <td><span class="blue">g</span></td>
+                <td><span class="green">l</span></td>
+                <td><span class="red">e</span></td>
+                <td rowspan="2" style="width: 10px;"></td>
+                <td><span class="blue arrow">></span></td>
+            </tr>
+
+            <tr>
+                <td class="page_nr"></td>
+                <td class="page_nr" style="color: black; cursor: text;">1</td>
+                <td class="page_nr">2</td>
+                <td class="page_nr">3</td>
+                <td class="page_nr">4</td>
+                <td class="page_nr">5</td>
+                <td class="page_nr">6</td>
+                <td class="page_nr">7</td>
+                <td class="page_nr">8</td>
+                <td class="page_nr">9</td>
+                <td class="page_nr">10</td>
+                <td colspan="3"></td>
+                <td class="page_nr">Następna</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+      <div class="footer">
+
+        <div class="localization">
+        <p>
+          <a class="country">Polska</a>
+          <a class="where"><strong>Podgórze Duchackie, Kraków</strong> - Z Twojego adresu internetowego </a>
+          <a class ="where2">- Użyj dokładnej lokalizacji</a><a class ="where2"> - Dowiedz się więcej</a>
+        </p>
+      </div>
+
+        <ul>
+            <li><a href="#">Pomoc</a></li>
+            <li><a href="#">Prześlij opinię</a></li>
+            <li><a href="#">Prywatność</a></li>
+            <li><a href="#">Warunki</a></li>
+        </ul>
+        
+      </div>
+    </div>
+</body>
+<script>
+  var app = new Vue({
     el: '#app',
     data: {
-        inputHandler: '',
-        cities: window.cities,
-        filteredCities: []
+      selected_city: '',
+      googleSearch: '',
+      classes: 0,
+      cities: window.cities,
     },
-    computed: {
-        findCity(){
-            if(this.inputHandler != ''){
-            var a = window.cities.filter(obj => obj.name.includes(this.inputHandler))
-            a=a.slice(0,10)
-            this.filteredCities = a;
-            return this.filteredCities
-        }
-        }
-    },
-    updated: function() {
-        if(app.inputHandler !== '')
-            document.body.classList.add("results")
-      }
-});
 
+    computed: {
+      filtered: function() {
+        if (this.googleSearch.length > 0){
+          let result = this.cities.filter(city => city.name.includes(this.googleSearch));
+          if(result.length > 10){
+            result = result.slice(1,11);
+          }
+          return result;
+        }
+      },
+ 
+    },
+
+    methods: {
+      pages: function () {
+        if (this.classes == 0){
+          this.classes = 1;
+        }
+        else{
+          this.googleSearch = '';
+          this.classes = 0;
+        }
+    },
+    updated: function (name){
+          this.googleSearch = name;
+          this.pages(); 
+    },
+    
+  },
+
+});
 </script>
 </html>
