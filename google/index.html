@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="./cities.js"></script>
+    <link rel="stylesheet" type="text/css" href="autocompleter.css">
+      <script src="./autocompleter.js"></script>
     <link rel="stylesheet" type="text/css" href="style2.css">
 
 </head>
@@ -27,7 +29,7 @@
                 <br><br>
                 <div class="search_elements">
                     <div class="dropdown_content">
-                        <input @focus="foc" ref="first" v-model="googleSearch" type="text" class="search_input" v-on:keyup.down="down" v-on:keyup.up="up" v-on:keyup.enter="enterClick" />
+                        <input @focus="foc" ref="first" v-model="googleSearch" type="text" class="search_input" v-on:keyup.down="down" v-on:keyup.up="up"  />
                         <div class="bottom_border"></div>
                         <div class="list">
                             <ul v-for="(city, index) in filtered" v-on:click="updated(city.name)">
@@ -292,18 +294,6 @@
     },
     choose(i){
     this.googleSearch = this.filtered[i].name;
-    },
-
-    enterClick() {
-    if(this.list_counter != -1){
-    this.googleSearch = this.filtered[this.list_counter].name
-    this.list_counter = -1;
-    this.pages();
-    this.foc = false;
-    }
-    else{
-    this.pages();
-    }
     },
 
     up() {
