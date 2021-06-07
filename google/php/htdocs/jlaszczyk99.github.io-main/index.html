@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+        margin: 0;
+    }
+
+    .primary {
+        position: absolute;
+        width: 100%;
+        height: 125px;
+        z-index: -1;
+        background-color: #d8d8c0;
+    }
+
+    sidebar {
+        grid-area: sidebar;
+        text-align: center;
+        background-color: #ebebe0;
+    }
+
+    img {
+        margin-top: 20px;
+        width: 200px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    header {
+        box-sizing: content-box;
+        grid-area: header;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        color: black;
+        display: block;
+        text-align: center;
+        height: 125px;
+    }
+
+    article {
+        grid-area: article;
+        margin-left: 15px;
+    }
+
+    .info {
+        text-align: center;
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        border-top: solid;
+    }
+
+    .content {
+        margin: 25px 0px 25px 0px;
+    }
+
+    .box {
+        width: 250px;
+        margin-top: 20px;
+    }
+
+    .boxContent {
+        min-width: 450px;
+        margin-top: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-areas: 'header header header' 'sidebar article article' ;
+        grid-column-gap: 10px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .grid {
+            display: grid;
+            grid-template-areas: 'header' 'sidebar' 'article';
+        }
+    }
+
+</style>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV</title>
+</head>
+<body>
+
+<div class="primary"></div>
+<div class="grid">
+    <header>
+        <h1>Jakub Łaszczyk</h1>
+    </header>
+    <sidebar>
+        <img src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p320x320/24174683_1490244971094612_144558718174752304_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=7206a8&_nc_ohc=m2WJ9xLh-GIAX_8sgD3&_nc_ht=scontent-waw1-1.xx&tp=6&oh=0b08b90515efbbf79439cbbef771c0c2&oe=6074B249" alt="Avatar" >
+        <div class="info">
+            <h2>Kontakt</h2>
+            <h3>Email</h3>
+            <p>jlaszczyk@student.agh.edu.pl</p>
+            <h3>Telefon komórkowy</h3>
+            <p>604392470</p>
+        </div>
+        
+    </sidebar>
+    <article>
+        <div class="intro">
+            <h3> O mnie</h3>
+            <p class="content" style="border-top: solid;">Jestem studentem 2 roku Informatyki i Ekonometrii na Akademii Górniczo- Hutniczej w Krakowie. Szukam pierwszej pracy. Jestem odpowiedzialny, ambitny i uczciwy. </p>
+            <h3> Wykształcenie</h3>
+            <div class="flex">
+                <div class="box"><b>01.10.2019- obecnie</b></div>
+                <div class="boxContent">
+                    <b>Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie</b>
+                    <p>Informatyka i Ekonometria, Wydział Zarządzania</p>
+                </div>
+                <div class="flex" style="border-top: none;">
+                    <div class="box"><b>01.10.2018- 01.10.2019</b></div>
+                    <div class="boxContent">
+                        <b>Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie</b>
+                        <p>Informatyka Stosowana, Wydział Geologii, Geofizyki i Ochrony Środowiska</p>
+                    </div>
+                </div>
+            </div>
+            <h3> Doświadczenie</h3>
+            <div class="flex">
+                <div class="box"><b>01.12.2020 - obecnie</b></div>
+                <div class="boxContent">
+                    <b>ABC statistics</b>
+                    <p>Stażysta w dziale analizy danych</p>
+                    <ul>
+                        <li>Poznawanie obsługi progamów R i Gretl</li>
+                        <li>Tworzenie prognoz dla szeregów czasowych</li>
+                        <li>Współpraca przy projektach międzynarodowych</li>
+                        <li>Analiza danych finansowych przedsiębiorstw</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex" style="border-top: none;">
+                <div class="box"><b>12.07.2020-01.10.2020</b></div>
+                <div class="boxContent">
+                    <b>Finanse Krk</b>
+                    <p>Praktykant w dziale finansowym</p>
+                    <ul>
+                        <li>Rozliczanie faktur</li>
+                        <li>Praca w międzynarodowym zespole</li>
+                        <li>Tworzenie architektury front-end oraz integracja backend</li>
+                    </ul>
+                </div>
+            </div>
+            <h3> Umiejętności i kursy</h3>
+            <div class="flex">
+                <div class="box"><b>Kursy</b></div>
+                <div class="boxContent">
+                    <li>Programowanie w R </li>
+                    <li> Wstęp do Analizy Danych w programie Statistica</li>
+                </div>
+
+            </div>
+            <div class="flex" style="border-top: none;">
+                <div class="box"><b>Znajomość języków obcych</b></div>
+                <div class="boxContent">
+                    <li>Język angielski na poziomie zaawansowanym </li>
+                    <li>Język rosyjski na poziomie średnio-zaawansowanym</li>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+</div>
+
+</body>
+</html>
